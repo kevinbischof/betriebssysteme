@@ -82,7 +82,10 @@ int com(int sd, struct sockaddr_in sin, int *sin_len) {
                 ein(sockstream, &sum);
             }
             if(choose == 3) {
-                stand(sockstream, &sum);
+                //stand(sockstream, &sum);
+                char *tell = "Ihr neuer Kontostand:";
+                fprintf(sockstream, "%s%i\n\n", tell, sum);
+                rewind(sockstream);
             }
             if(choose == 4) {
                 fprintf(sockstream, "%s", ciao);
